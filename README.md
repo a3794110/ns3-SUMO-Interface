@@ -9,6 +9,11 @@ To simulate the V2X application scenario, all UE are installed with UDP client a
 
 ## License
 
+BSD 3-Clause License
+
+Copyright (c) 2019, Ping-Han
+All rights reserved.
+
 ## Prerequisite
 We test our project on following version of ns-3 and SUMO.
 
