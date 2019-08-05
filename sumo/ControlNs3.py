@@ -44,7 +44,7 @@ def Vehicle_Enter_Network2():
 
 
 
-def Ns3Simulation( simTime = 50, enbTxPowerDbm = 46, packetSize = 1024, packetsInterval = 500, fadingModel = 0):
+def Ns3LteSimulation( simTime = 50, enbTxPowerDbm = 46, packetSize = 1024, packetsInterval = 500, fadingModel = 0):
 #============================================================================================
 # simTime", "Total duration of the simulation (in seconds)
 # enbTxPowerDbm", "TX power [dBm] used by HeNBs (default = 46.0)
