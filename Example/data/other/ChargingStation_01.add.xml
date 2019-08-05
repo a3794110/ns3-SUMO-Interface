@@ -1,0 +1,5 @@
+<additionals>
+    <chargingStation id="chargingStation_298600770#4_0_0" lane="298600770#4_0" startPos="35.35" endPos="45.35" friendlyPos="0" power="22000.00" efficiency="0.95" chargeInTransit="0" chargeDelay="0.00"/>
+    <chargingStation id="chargingStation_496257368#24_0_1" lane="496257368#24_0" startPos="65.99" endPos="75.99" friendlyPos="0" power="22000.00" efficiency="0.95" chargeInTransit="0" chargeDelay="0.00"/>
+    <chargingStation id="chargingStation_496257369#1_0_2" lane="496257369#1_0" startPos="56.62" endPos="66.62" name="CS3" friendlyPos="0" power="22000.00" efficiency="0.95" chargeInTransit="0" chargeDelay="0.00"/>
+</additionals>

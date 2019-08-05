@@ -1,0 +1,12 @@
+<additionals>
+
+	<parkingArea id="CS1" lane="313194389#2_0" startPos="35" endPos="70" roadsideCapacity="5" width="5" length="7" angle="0"/>
+	<parkingArea id="CS2" lane="111343192#0_0" startPos="35" endPos="70" roadsideCapacity="5" width="5" length="7" angle="0"/>
+	<parkingArea id="CS3" lane="111343192#2_0" startPos="35" endPos="70" roadsideCapacity="5" width="5" length="7" angle="0"/>
+	<parkingArea id="CS4" lane="536831320#4_0" startPos="10" endPos="30" roadsideCapacity="5" width="5" length="4" angle="0"/>
+	<parkingArea id="CS5" lane="279049706#6_0" startPos="35" endPos="70" roadsideCapacity="5" width="5" length="7" angle="0"/>
+	<parkingArea id="CS6" lane="496257368#3_0" startPos="35" endPos="70" roadsideCapacity="5" width="5" length="7" angle="0"/>
+    
+
+
+</additionals>

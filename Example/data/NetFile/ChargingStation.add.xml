@@ -1,0 +1,7 @@
+<additionals>
+
+	<parkingArea id="CS01" lane="298600770#4_0" startPos="35" endPos="65" roadsideCapacity="6" width="5" length="10" angle="0"/>
+	<parkingArea id="CS02" lane="496257368#24_0" startPos="65" endPos="95" roadsideCapacity="6" width="5" length="10" angle="0"/>
+	<parkingArea id="CS03" lane="496257369#1_0" startPos="55" endPos="85" roadsideCapacity="6" width="5" length="10" angle="0"/>
+
+</additionals>

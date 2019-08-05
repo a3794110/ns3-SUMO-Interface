@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generated on 2018-06-26 19:49:40.525182 by $Id$
+  options: -n map.net.xml -e 100 -l -o map.trips.xml
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <trip id="0" depart="0.00" from="-317035631#6" to="-298599470#3"/>
+    <trip id="1" depart="1.00" from="-260615170#10" to="-108071733#4"/>
+</routes>

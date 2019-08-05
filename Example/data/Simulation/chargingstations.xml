@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2019年08月05日 (週一) 04時25分40秒 by Eclipse SUMO GUI Version v1_2_0+0977-9182ddd
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="data/Simulation/Net.net.xml"/>
+        <route-files value="data/Simulation/Route.rou.xml"/>
+        <additional-files value="data/Simulation/ChargingStation.add.xml"/>
+    </input>
+
+    <output>
+        <battery-output value="data/Simulation/Battery.out.xml"/>
+        <battery-output.precision value="4"/>
+        <chargingstations-output value="data/Simulation/chargingstations.xml"/>
+        <summary-output value="data/Simulation/summary_100.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="2000"/>
+    </time>
+
+    <battery>
+        <device.battery.probability value="1"/>
+    </battery>
+
+    <traci_server>
+        <remote-port value="36331"/>
+    </traci_server>
+
+</configuration>
+-->
+
+<chargingstations-export>
+</chargingstations-export>
