@@ -136,3 +136,6 @@ ifstream Enbcin("scratch/EnbLocations2.txt");
 ## Example
 
 We offered an example project in folder **Example**. In this project, vehicles enter the map according to Poisson λ=1 k=1. You can see the example usage in file **main.py**.
+
+The following video shows the result of using different simulation configuration with this project.
+https://youtu.be/9UtVOFBHFtk
