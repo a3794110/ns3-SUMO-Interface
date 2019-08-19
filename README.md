@@ -32,6 +32,7 @@ We test our project on following version of ns-3 and SUMO.
 
     ns-3.26
     SUMO 1.2.0
+    python 3.7
 
 Please install SUMO with following commands.
 ```
