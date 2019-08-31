@@ -44,12 +44,14 @@ def Vehicle_Enter_Network2():
 
 
 
-def Ns3LteSimulation( simTime = 50, enbTxPowerDbm = 46, packetSize = 1024, packetsInterval = 500, fadingModel = 0):
+def Ns3LteSimulation( simTime = 50, enbTxPowerDbm = 46, ulpacketSize = 1024, ulpacketsInterval = 500, dlpacketSize = 1024, dlpacketsInterval = 500, fadingModel = 0):
 #============================================================================================
 # simTime", "Total duration of the simulation (in seconds)
 # enbTxPowerDbm", "TX power [dBm] used by HeNBs (default = 46.0)
-# packetSize","Size (bytes) of packets generated (default = 1024 bytes). The minimum packet size is 12 bytes which is the size of the header carrying the sequence number and the time stamp.
-# packetsInterval","The time (ms) wait between packets (default = 500 ms)
+# ulpacketSize","Size (bytes) of UL packets generated send to Remote Server. (default = 1024 bytes). The minimum packet size is 12 bytes which is the size of the header carrying the sequence number and the time stamp.
+# ulpacketsInterval","The time (ms) wait between UL packets send to Remote Server. (default = 500 ms)
+# dlpacketSize","Size (bytes) of DL packets generated send to Remote Server. (default = 1024 bytes). The minimum packet size is 12 bytes which is the size of the header carrying the sequence number and the time stamp.
+# dlpacketsInterval","The time (ms) wait between DL packets send to Remote Server. (default = 500 ms)
 # fadingModel","setting fading model (1, 2 and 3 represent pedestrian, urban and vehicular scenario respectively)
 #============================================================================================
 
@@ -119,7 +121,7 @@ def Ns3LteSimulation( simTime = 50, enbTxPowerDbm = 46, packetSize = 1024, packe
                     print("###################", str(max_num_veh+1))
                     #print(RunNs3)
                     sumohome = os.environ['SUMO_HOME']
-                    subprocess.call(["bash",sumohome+"/tools/RunNs3.sh","simTime" , str(simTime), "enbTxPowerDbm", str(enbTxPowerDbm), "packetSize", str(packetSize), "packetsInterval", str(packetsInterval), "fadingModel", str(fadingModel)])
+                    subprocess.call(["bash",sumohome+"/tools/RunNs3.sh","simTime" , str(simTime), "enbTxPowerDbm", str(enbTxPowerDbm), "dlpacketSize", str(dlpacketSize), "dlpacketsInterval", str(dlpacketsInterval), "ulpacketSize", str(ulpacketSize), "ulpacketsInterval", str(ulpacketsInterval), "fadingModel", str(fadingModel)])
                     sys.stdout.flush()
                     traci.close()
                     break
