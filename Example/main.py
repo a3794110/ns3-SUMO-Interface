@@ -115,9 +115,9 @@ def run():
 
             
 
-#====================================================================        
-        Ns3LteSimulation(simTime=50, packetSize= 512)                                   # function for control ns-3
-#====================================================================
+#=================================================================================
+        Ns3LteSimulation(simTime=50, ulpacketSize= 512)             # function for control ns-3
+#=================================================================================
 
         ArrivedVeh = traci.simulation.getArrivedIDList()
         if ArrivedVeh:
