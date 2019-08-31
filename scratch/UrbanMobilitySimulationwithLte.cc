@@ -166,13 +166,15 @@ main (int argc, char *argv[])
 
 
   // Command line arguments
-  unsigned int interval = 300, packetsize = 1024, fadingmodel = 0;
+  unsigned int dlinterval = 300, dlpacketsize = 1024, ulinterval = 300, ulpacketsize = 1024, fadingmodel = 0;
   CommandLine cmd;
   cmd.AddValue ("simTime", "Total duration of the simulation (in seconds)", simTime);
   //cmd.AddValue ("speed", "Speed of the UE (default = 20 m/s)", speed);
   cmd.AddValue ("enbTxPowerDbm", "TX power [dBm] used by HeNBs (default = 46.0)", enbTxPowerDbm);
-  cmd.AddValue ("packetSize","Size (bytes) of packets generated (default = 1024 bytes). The minimum packet size is 12 bytes which is the size of the header carrying the sequence number and the time stamp.", packetsize);
-  cmd.AddValue ("packetsInterval","The time (ms) wait between packets (default = 500 ms)", interval);
+  cmd.AddValue ("dlpacketSize","Size (bytes) of packets generated (default = 1024 bytes). The minimum packet size is 12 bytes which is the size of the header carrying the sequence number and the time stamp.", dlpacketsize);
+  cmd.AddValue ("dlpacketsInterval","The time (ms) wait between packets (default = 500 ms)", dlinterval);
+  cmd.AddValue ("ulpacketSize","Size (bytes) of packets generated (default = 1024 bytes). The minimum packet size is 12 bytes which is the size of the header carrying the sequence number and the time stamp.", ulpacketsize);
+  cmd.AddValue ("ulpacketsInterval","The time (ms) wait between packets (default = 500 ms)", ulinterval);
   cmd.AddValue ("fadingModel","setting fading model (1, 2 and 3 represent pedestrian, urban and vehicular scenario respectively)", fadingmodel);
   cmd.Parse (argc, argv);
 
@@ -181,8 +183,8 @@ main (int argc, char *argv[])
   // arguments, so that the user is allowed to override these settings
   Config::SetDefault ("ns3::UdpClient::Interval", TimeValue (MilliSeconds (500)));
   Config::SetDefault ("ns3::UdpClient::MaxPackets", UintegerValue (4294967295));
-  Config::SetDefault ("ns3::UdpClient::PacketSize", UintegerValue (packetsize));
-  Config::SetDefault ("ns3::UdpClient::Interval", TimeValue(MilliSeconds (interval)));
+  //Config::SetDefault ("ns3::UdpClient::PacketSize", UintegerValue (packetsize));
+  //Config::SetDefault ("ns3::UdpClient::Interval", TimeValue(MilliSeconds (interval)));
   Config::SetDefault ("ns3::LteHelper::UseIdealRrc", BooleanValue (true));
   Config::SetDefault ("ns3::LteEnbPhy::TxPower", DoubleValue (enbTxPowerDbm));
 
@@ -467,6 +469,12 @@ for(int i = 0 ; i < lines ; i ++ ){
 
           NS_LOG_LOGIC ("installing UDP DL app for UE " << u);
           UdpClientHelper dlClientHelper (ueIpIfaces.GetAddress (u), dlPort);
+
+          dlClientHelper.SetAttribute ("Interval", TimeValue(MilliSeconds (dlinterval)));
+          //dlClientHelper.SetAttribute ("MaxPackets", UintegerValue(100000));
+          dlClientHelper.SetAttribute ("PacketSize", UintegerValue (dlpacketsize));
+
+
           clientApps.Add (dlClientHelper.Install (remoteHost));
           PacketSinkHelper dlPacketSinkHelper ("ns3::UdpSocketFactory",
                                               InetSocketAddress (Ipv4Address::GetAny (), dlPort));
@@ -474,6 +482,11 @@ for(int i = 0 ; i < lines ; i ++ ){
 
           NS_LOG_LOGIC ("installing UDP UL app for UE " << u);
           UdpClientHelper ulClientHelper (remoteHostAddr, ulPort);
+
+          ulClientHelper.SetAttribute ("Interval", TimeValue(MilliSeconds (ulinterval)));
+          //dlClientHelper.SetAttribute ("MaxPackets", UintegerValue(100000));
+          ulClientHelper.SetAttribute ("PacketSize", UintegerValue (ulpacketsize));
+
           clientApps.Add (ulClientHelper.Install (ue));
           PacketSinkHelper ulPacketSinkHelper ("ns3::UdpSocketFactory",
                                               InetSocketAddress (Ipv4Address::GetAny (), ulPort));
