@@ -7,6 +7,9 @@ The SUMO module outputs its vehicle trajectory file into ns-3; ns-3 deploy UE mo
 
 To simulate the V2X application scenario, all UE are installed with UDP client application which send packets to remote server in cetain period. The packet interval and packet size can control with SUMO module we build.
 
+Figure offered below is the system architecture:
+![image](https://github.com/a3794110/ns3-SUMO-Interface/edit/master/NS3-SUMO-Interface.jpg)
+
 ## License
 
 BSD 3-Clause License
